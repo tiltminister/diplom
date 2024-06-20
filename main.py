@@ -48,25 +48,6 @@ def has_poles(func, a, b, num_points=1000):
             return True
     return False
 
-def has_poles(func, a, b, num_points=1000):
-    """
-    Проверяет, есть ли у функции вертикальные асимптоты на интервале [a, b].
-
-    :param func: Функция для проверки.
-    :param a: Нижний предел интервала.
-    :param b: Верхний предел интервала.
-    :param num_points: Количество точек для проверки.
-    :return: True, если асимптоты обнаружены, иначе False.
-    """
-    x_vals = np.linspace(a, b, num_points)
-    for x in x_vals:
-        try:
-            if np.isinf(func(x)) or np.isnan(func(x)):
-                return True
-        except ZeroDivisionError:
-            return True
-    return False
-
 
 def input_function():
     """
